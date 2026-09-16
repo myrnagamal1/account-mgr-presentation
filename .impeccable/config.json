@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreFiles": [
+      "Desktop/ClaudeProjects/account-mgr-presentation/AccountManager_IC_Presentation.html",
+      "Desktop/ClaudeProjects/account-mgr-presentation/AccountManagement_Presentation.html",
+      "AccountManager_IC_Presentation.html",
+      "AccountManagement_Presentation.html"
+    ],
+    "ignoreRules": ["em-dash-overuse"],
+    "ignoreValues": [
+      { "rule": "overused-font", "value": "Arial", "reason": "System font stack fallback, not a web import" }
+    ]
+  }
+}
