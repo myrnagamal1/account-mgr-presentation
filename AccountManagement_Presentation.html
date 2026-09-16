@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Myrna Gamal Fahim</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:      #111318;
+  --bg2:     #181c24;
+  --bg3:     #1e2330;
+  --teal:    #00c9b1;
+  --teal2:   #00a896;
+  --white:   #f4f4f2;
+  --dim:     #8b92a5;
+  --dimmer:  #4a5168;
+  --accent2: #ff6b6b;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Segoe UI', Arial, Helvetica, sans-serif; background: var(--bg); color: var(--white); overflow-x: hidden; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: flex; align-items: center; padding: 14px 40px;
+  background: rgba(17,19,24,0.92); backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,201,177,0.12);
+}
+.nav-name { font-size: 11px; font-weight: 800; letter-spacing: 4px; color: var(--teal); text-transform: uppercase; margin-right: auto; }
+nav a { font-size: 11px; color: var(--dim); text-decoration: none; padding: 6px 14px; border-radius: 2px; letter-spacing: 1px; transition: color .2s; }
+nav a:hover, nav a.on { color: var(--teal); }
+
+/* ── SECTIONS ── */
+section { min-height: 100vh; position: relative; overflow: hidden; display: flex; flex-direction: column; padding-top: 60px; }
+
+/* ═══════════════════════════════════════
+   SLIDE 1 — COVER
+═══════════════════════════════════════ */
+#s1 { background: var(--bg); justify-content: center; }
+
+.s1-inner {
+  padding: 80px 60px 60px;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 60px;
+  align-items: center;
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* huge background letter */
+.s1-bg-letter {
+  position: absolute;
+  right: -40px; top: 30px;
+  font-size: 600px; font-weight: 900;
+  color: rgba(0,201,177,0.03);
+  line-height: 1; pointer-events: none;
+  user-select: none; z-index: 1;
+  font-family: Arial Black, Impact, sans-serif;
+}
+
+.s1-eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 4px;
+  color: var(--teal); text-transform: uppercase; margin-bottom: 20px;
+  display: flex; align-items: center; gap: 12px;
+}
+.s1-eyebrow::before { content: ''; display: block; width: 30px; height: 2px; background: var(--teal); }
+
+.s1-name {
+  font-size: clamp(52px, 6.5vw, 88px);
+  font-weight: 900; line-height: 1.0;
+  color: var(--white); letter-spacing: -2px;
+  margin-bottom: 12px;
+}
+.s1-name .accent { color: var(--teal); display: block; }
+
+.s1-title {
+  font-size: 15px; color: var(--dim); margin-bottom: 28px;
+  line-height: 1.6; max-width: 520px;
+}
+.s1-title strong { color: var(--white); }
+
+.s1-intro {
+  font-size: 18px; color: var(--white); line-height: 1.7;
+  max-width: 520px; margin-bottom: 36px;
+  font-weight: 300;
+}
+.s1-intro em { color: var(--teal); font-style: normal; font-weight: 600; }
+
+.s1-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+.tag {
+  padding: 7px 16px; border: 1px solid var(--dimmer);
+  font-size: 11px; letter-spacing: 1.5px; color: var(--dim);
+  text-transform: uppercase; border-radius: 2px;
+  transition: border-color .2s, color .2s;
+}
+.tag:hover { border-color: var(--teal); color: var(--teal); }
+
+/* right side stat block */
+.s1-stats { display: flex; flex-direction: column; gap: 2px; }
+.stat-block {
+  background: var(--bg2);
+  padding: 22px 24px;
+  border-top: 2px solid rgba(0,201,177,0.25);
+}
+.stat-block:first-child { border-top-color: var(--teal); }
+.stat-num { font-size: 44px; font-weight: 900; color: var(--teal); line-height: 1; letter-spacing: -2px; }
+.stat-label { font-size: 11px; color: var(--dim); margin-top: 4px; line-height: 1.4; }
+
+.s1-footer {
+  padding: 20px 60px;
+  font-size: 11px; color: var(--dimmer);
+  display: flex; justify-content: space-between;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  margin-top: auto;
+}
+
+/* ═══════════════════════════════════════
+   SLIDE 2 — CAREER
+═══════════════════════════════════════ */
+#s2 { background: var(--bg); }
+
+.s2-inner {
+  flex: 1; display: grid;
+  grid-template-columns: 280px 1fr;
+  max-width: 1300px; width: 100%; margin: 0 auto;
+  padding: 50px 60px 50px;
+  gap: 0;
+  align-items: stretch;
+}
+
+.s2-left {
+  padding-right: 50px;
+  border-right: 1px solid rgba(255,255,255,0.07);
+  display: flex; flex-direction: column; gap: 0;
+}
+
+.section-eyebrow {
+  font-size: 10px; font-weight: 800; letter-spacing: 4px;
+  color: var(--teal); text-transform: uppercase; margin-bottom: 16px;
+}
+.section-h {
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 900; line-height: 1.1;
+  color: var(--white); letter-spacing: -1px;
+  margin-bottom: 20px;
+}
+.section-sub { font-size: 13px; color: var(--dim); line-height: 1.7; margin-bottom: 30px; }
+
+.skills-stack { display: flex; flex-direction: column; gap: 8px; margin-top: auto; }
+.skill-row { display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--dim); }
+.skill-row::before { content: ''; display: block; width: 6px; height: 6px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
+
+.s2-right { padding-left: 50px; display: flex; flex-direction: column; justify-content: center; gap: 0; }
+
+/* timeline */
+.timeline { position: relative; padding-left: 32px; }
+.timeline::before {
+  content: ''; position: absolute; left: 6px; top: 8px; bottom: 8px;
+  width: 2px; background: linear-gradient(to bottom, var(--teal), var(--dimmer) 70%, transparent);
+}
+
+.titem { position: relative; padding-bottom: 36px; }
+.titem:last-child { padding-bottom: 0; }
+.titem::before {
+  content: ''; position: absolute; left: -28px; top: 6px;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--bg); border: 2px solid var(--teal);
+}
+.titem:not(:first-child)::before { border-color: var(--dimmer); }
+
+.t-year { font-size: 10px; font-weight: 700; letter-spacing: 2px; color: var(--teal); margin-bottom: 4px; }
+.titem:not(:first-child) .t-year { color: var(--dimmer); }
+
+.t-role { font-size: 18px; font-weight: 800; color: var(--white); margin-bottom: 2px; line-height: 1.2; }
+.t-company { font-size: 12px; color: var(--teal); margin-bottom: 10px; font-weight: 600; }
+.titem:not(:first-child) .t-company { color: var(--dim); }
+.t-body { font-size: 13px; color: var(--dim); line-height: 1.7; }
+.t-body strong { color: var(--white); font-weight: 600; }
+
+.leader-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(0,201,177,0.1); border: 1px solid rgba(0,201,177,0.25);
+  color: var(--teal); font-size: 10px; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 2px; margin-top: 8px;
+}
+.leader-badge::before { content: '◆'; font-size: 7px; }
+
+/* ═══════════════════════════════════════
+   SLIDE 3 — ACHIEVEMENT
+═══════════════════════════════════════ */
+#s3 { background: var(--bg2); }
+
+.s3-inner {
+  flex: 1; max-width: 1300px; width: 100%; margin: 0 auto;
+  padding: 50px 60px;
+  display: flex; flex-direction: column;
+}
+
+.s3-top {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 60px; margin-bottom: 40px; align-items: end;
+}
+
+.s3-watermark {
+  position: absolute;
+  right: 60px; top: 60px;
+  font-size: 260px; font-weight: 900;
+  color: rgba(0,201,177,0.04);
+  line-height: 1; pointer-events: none;
+  font-family: Arial Black, Impact, sans-serif;
+  letter-spacing: -10px;
+}
+
+.big-stat {
+  font-size: clamp(80px, 12vw, 140px);
+  font-weight: 900; color: var(--teal);
+  line-height: 1; letter-spacing: -4px;
+}
+.big-stat-label { font-size: 14px; color: var(--dim); margin-top: 6px; line-height: 1.5; max-width: 260px; }
+
+.s3-story { font-size: 15px; color: var(--dim); line-height: 1.8; }
+.s3-story p + p { margin-top: 14px; }
+.s3-story strong { color: var(--white); }
+
+.s3-actions {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 2px; margin-top: auto;
+}
+.action-block {
+  background: var(--bg3); padding: 20px 18px;
+  border-top: 2px solid transparent;
+  transition: border-color .2s;
+}
+.action-block:first-child { border-top-color: var(--teal); }
+.action-num { font-size: 32px; font-weight: 900; color: var(--teal); opacity: .3; line-height: 1; margin-bottom: 8px; }
+.action-text { font-size: 12px; color: var(--dim); line-height: 1.6; }
+.action-text strong { color: var(--white); display: block; margin-bottom: 3px; font-size: 13px; }
+
+/* ═══════════════════════════════════════
+   SLIDE 4 — VALUE
+═══════════════════════════════════════ */
+#s4 { background: var(--bg); }
+
+.s4-inner {
+  flex: 1; max-width: 1300px; width: 100%; margin: 0 auto;
+  padding: 50px 60px;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 70px;
+  align-items: start;
+}
+
+.s4-left { position: sticky; top: 80px; }
+.s4-statement {
+  font-size: clamp(22px, 2.8vw, 32px);
+  font-weight: 800; line-height: 1.3;
+  color: var(--white); margin-bottom: 24px;
+  letter-spacing: -.5px;
+}
+.s4-statement em { color: var(--teal); font-style: normal; display: block; }
+.s4-context { font-size: 14px; color: var(--dim); line-height: 1.8; }
+
+.s4-right { display: flex; flex-direction: column; gap: 0; padding-top: 6px; }
+.value-row {
+  display: grid; grid-template-columns: 40px 1fr;
+  gap: 20px; align-items: start;
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.value-row:first-child { border-top: 1px solid rgba(255,255,255,0.06); }
+.value-num { font-size: 11px; font-weight: 800; color: var(--teal); opacity: .5; padding-top: 4px; }
+.value-content {}
+.value-title { font-size: 16px; font-weight: 800; color: var(--white); margin-bottom: 6px; }
+.value-body  { font-size: 13px; color: var(--dim); line-height: 1.7; }
+.value-body strong { color: var(--white); }
+
+/* ═══════════════════════════════════════
+   SLIDE 5 — WHY
+═══════════════════════════════════════ */
+#s5 { background: var(--bg2); }
+
+.s5-inner {
+  flex: 1; max-width: 1300px; width: 100%; margin: 0 auto;
+  padding: 50px 60px;
+  display: flex; flex-direction: column;
+}
+
+.s5-quote-wrap { flex: 1; display: flex; flex-direction: column; justify-content: center; margin-bottom: 40px; }
+
+.s5-quote-mark {
+  font-size: 120px; color: var(--teal); opacity: .15;
+  line-height: .7; font-family: Georgia, serif;
+  margin-bottom: -20px;
+}
+.s5-quote {
+  font-size: clamp(20px, 2.5vw, 30px);
+  font-weight: 700; line-height: 1.5;
+  color: var(--white); max-width: 860px;
+  margin-bottom: 16px;
+}
+.s5-quote em { color: var(--teal); font-style: normal; }
+.s5-attr { font-size: 12px; color: var(--dim); letter-spacing: 1px; }
+
+.reasons { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 40px; }
+.reason-block {
+  background: var(--bg3); padding: 20px 22px;
+  border-top: 2px solid var(--dimmer);
+}
+.reason-block:first-child { border-top-color: var(--teal); }
+.reason-head { font-size: 13px; font-weight: 800; color: var(--white); margin-bottom: 6px; }
+.reason-body { font-size: 12px; color: var(--dim); line-height: 1.7; }
+
+/* commitment strip */
+.commit-strip {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-top: 24px;
+}
+.commit-item {}
+.commit-when { font-size: 10px; font-weight: 800; letter-spacing: 2px; color: var(--teal); text-transform: uppercase; margin-bottom: 6px; }
+.commit-what { font-size: 12px; color: var(--dim); line-height: 1.6; }
+.commit-what strong { color: var(--white); display: block; margin-bottom: 2px; font-size: 13px; font-weight: 700; }
+
+/* ── PROGRESS DOTS ── */
+.dots {
+  position: fixed; right: 22px; top: 50%; transform: translateY(-50%);
+  display: flex; flex-direction: column; gap: 12px; z-index: 100;
+}
+.dots a {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--dimmer); display: block;
+  transition: background .2s, transform .2s;
+}
+.dots a.on, .dots a:hover { background: var(--teal); transform: scale(1.5); }
+
+/* scroll cue */
+.scroll-cue {
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+  font-size: 9px; letter-spacing: 3px; color: var(--dimmer); text-transform: uppercase;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  animation: bob 2s ease-in-out infinite; pointer-events: none;
+}
+@keyframes bob {
+  0%,100% { opacity: .4; transform: translateX(-50%) translateY(0); }
+  50%      { opacity: .9; transform: translateX(-50%) translateY(-5px); }
+}
+
+@media (max-width: 900px) {
+  .s1-inner, .s2-inner, .s4-inner { grid-template-columns: 1fr; }
+  .s3-top, .s3-actions, .reasons, .commit-strip { grid-template-columns: 1fr; }
+  .s2-left { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); padding-right: 0; padding-bottom: 30px; }
+  .s2-right { padding-left: 0; padding-top: 30px; }
+  .dots { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-name">Myrna Gamal Fahim</span>
+  <a href="#s1">Intro</a>
+  <a href="#s2">Journey</a>
+  <a href="#s3">Achievement</a>
+  <a href="#s4">Value</a>
+  <a href="#s5">Why</a>
+</nav>
+
+<div class="dots">
+  <a href="#s1"></a><a href="#s2"></a><a href="#s3"></a><a href="#s4"></a><a href="#s5"></a>
+</div>
+
+<!-- ═══════════ SLIDE 1: COVER ═══════════ -->
+<section id="s1">
+  <div class="s1-bg-letter">M</div>
+  <div class="s1-inner">
+    <div>
+      <div class="s1-eyebrow">Account Management Manager</div>
+      <h1 class="s1-name">
+        Myrna
+        <span class="accent">Gamal Fahim</span>
+      </h1>
+      <p class="s1-title">
+        <strong>Senior Sales Development Executive · SAP</strong><br>
+        Team Leader, MEA North
+      </p>
+      <p class="s1-intro">
+        I build teams, grow ecosystems, and create the<br>
+        <em>structure that makes client relationships thrive.</em><br>
+        Eight years of doing it at IBM and SAP.
+      </p>
+      <div class="s1-tags">
+        <span class="tag">Career</span>
+        <span class="tag">Achievement</span>
+        <span class="tag">Value</span>
+        <span class="tag">Why This Role</span>
+      </div>
+    </div>
+    <div class="s1-stats">
+      <div class="stat-block">
+        <div class="stat-num">8+</div>
+        <div class="stat-label">Years leading teams and managing enterprise client relationships</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num" style="color:var(--white);font-size:28px;font-weight:800;line-height:1.2">Acting<br>Team Lead</div>
+        <div class="stat-label">Senior SDE at SAP, currently team leader for MEA North</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">200+</div>
+        <div class="stat-label">Enterprise &amp; startup partners built from the ground up at IBM</div>
+      </div>
+    </div>
+  </div>
+  <div class="s1-footer">
+    <span>myrna.gamal@aucegypt.edu &nbsp;·&nbsp; linkedin.com/in/myrna-gamalfahim &nbsp;·&nbsp; Cairo, Egypt</span>
+    <span>Prepared for the Account Management Manager Role</span>
+  </div>
+</section>
+
+<!-- ═══════════ SLIDE 2: CAREER ═══════════ -->
+<section id="s2">
+  <div class="s2-inner">
+    <div class="s2-left">
+      <p class="section-eyebrow">Career Journey</p>
+      <h2 class="section-h">Built on<br>leading<br>people.</h2>
+      <p class="section-sub">
+        Every role I have held has had a leadership dimension. Not just doing the work, but building the team, creating the structure, and bringing others with me.
+      </p>
+      <div class="skills-stack">
+        <div class="skill-row">Team Leadership &amp; Mentorship</div>
+        <div class="skill-row">Enterprise Account Management</div>
+        <div class="skill-row">Salesforce &amp; CRM Governance</div>
+        <div class="skill-row">Stakeholder Engagement</div>
+        <div class="skill-row">Pipeline &amp; Revenue Strategy</div>
+        <div class="skill-row">Cross-functional Collaboration</div>
+      </div>
+    </div>
+    <div class="s2-right">
+      <div class="timeline">
+
+        <div class="titem">
+          <p class="t-year">APR 2025 — PRESENT</p>
+          <p class="t-role">Senior Sales Development Executive</p>
+          <p class="t-company">SAP · Cairo, Egypt</p>
+          <p class="t-body">
+            Senior SDE at SAP, currently <strong>team leader for MEA North</strong> — driving pipeline strategy across key industries, aligning the team on client priorities, and working alongside account executives to build and convert enterprise pipeline.
+          </p>
+          <span class="leader-badge">Team Leader · MEA North</span>
+        </div>
+
+        <div class="titem">
+          <p class="t-year">FEB 2022 — APR 2025</p>
+          <p class="t-role">Data &amp; AI Technical Sales Specialist</p>
+          <p class="t-company">IBM · Cairo, Egypt</p>
+          <p class="t-body">
+            Owned the full technical sales cycle for enterprise clients. Built ROI models, delivered executive-level demos and proofs of concept, and became the trusted advisor for IBM business partners across Egypt, South Africa, and Turkey on all things Data &amp; AI.
+          </p>
+        </div>
+
+        <div class="titem">
+          <p class="t-year">APR 2017 — FEB 2022</p>
+          <p class="t-role">IBM Cloud Developer Advocate Manager</p>
+          <p class="t-company">IBM · Cairo, Egypt</p>
+          <p class="t-body">
+            <strong>Led a team of Developer Advocates</strong> across MEA, setting direction, building performance rhythms, and growing IBM Cloud's developer ecosystem from a standing start. Drove a <strong>40% increase in active engagement</strong> and personally secured <strong>200+ new startup partners</strong>. Built C-level relationships that shaped cloud adoption strategies region-wide.
+          </p>
+          <span class="leader-badge">Team Manager · Developer Advocacy</span>
+        </div>
+
+        <div class="titem">
+          <p class="t-year">2012 — 2016 &amp; MBA ONGOING</p>
+          <p class="t-role">BSc Computer Science · MBA</p>
+          <p class="t-company">American University in Cairo (GPA 3.8) · Edinburgh Business School</p>
+          <p class="t-body">Technical foundations built at AUC, leadership and commercial strategy being deepened through an ongoing MBA at Edinburgh.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SLIDE 3: ACHIEVEMENT ═══════════ -->
+<section id="s3">
+  <div class="s3-watermark">140%</div>
+  <div class="s3-inner">
+    <div class="s3-top">
+      <div>
+        <p class="section-eyebrow">Achievement I'm Proud Of</p>
+        <h2 class="section-h" style="font-size:clamp(26px,3.2vw,46px)">Hitting target twice. The second time before I even had a full year.</h2>
+        <div class="big-stat" style="margin-top:20px">140<span style="font-size:.5em;color:var(--white);opacity:.6">%</span></div>
+        <p class="big-stat-label">of sales target achieved this year at SAP. 100% the year before, despite joining 4 months into the cycle.</p>
+      </div>
+      <div class="s3-story">
+        <p>I joined SAP in April 2025 into a market I was still mapping, with a pipeline I was still building. Most people would have set realistic expectations for year one. I chose not to.</p>
+        <p>By the end of that first year, with just <strong>8 months on the clock</strong>, I had hit 100% of my full-year target. That meant prospecting faster, qualifying harder, and building senior relationships in a compressed timeline.</p>
+        <p>A big part of how I did it: I built AI into my workflow from the start. AI tools helped me identify the right accounts and personas, prioritise outreach, and build prospecting sequences that were sharp, not scattergun. I wasn't spraying and praying. I was targeting with precision.</p>
+        <p>This year, with a full cycle, a partner ecosystem behind me, and the MEA North team to lead alongside my individual quota, I pushed further: <strong>140% of target.</strong> The AI foundation scaled with me.</p>
+        <p style="margin-top:20px;font-size:16px;color:var(--white);font-weight:600">"I don't wait for conditions to be perfect. I build the conditions."</p>
+      </div>
+    </div>
+    <div class="s3-actions">
+      <div class="action-block">
+        <div class="action-num">◆</div>
+        <div class="action-text"><strong>100% in year one</strong>Full target delivered with only 8 months in role, in a new market and a new product portfolio</div>
+      </div>
+      <div class="action-block">
+        <div class="action-num">◆</div>
+        <div class="action-text"><strong>140% this year</strong>Exceeded target while simultaneously taking on team leadership responsibilities for MEA North</div>
+      </div>
+      <div class="action-block">
+        <div class="action-num">◆</div>
+        <div class="action-text"><strong>AI-powered prospecting</strong>Used AI to identify the right accounts, personas, and timing — turning cold outreach into precision targeting</div>
+      </div>
+      <div class="action-block">
+        <div class="action-num">◆</div>
+        <div class="action-text"><strong>Lead and deliver</strong>Hit personal targets while leading the MEA North SDE team, proving I can do both at once</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SLIDE 4: VALUE ═══════════ -->
+<section id="s4">
+  <div class="s4-inner">
+    <div class="s4-left">
+      <p class="section-eyebrow">Value to This Role</p>
+      <h2 class="s4-statement">
+        I don't just manage accounts.
+        <em>I build the system that makes account management work.</em>
+      </h2>
+      <p class="s4-context">
+        Every strength below is grounded in something I have actually done: at IBM leading a team, at SAP leading a region. This is not a list of skills I claim. It is a track record.
+      </p>
+    </div>
+    <div class="s4-right">
+
+      <div class="value-row">
+        <div class="value-num">◆</div>
+        <div class="value-content">
+          <p class="value-title">Account Cadence &amp; Discipline</p>
+          <p class="value-body">I have designed and run engagement cycles for <strong>40+ client and partner relationships at IBM</strong>. At SAP I hit <strong>140% of target this year</strong> and <strong>100% last year</strong> (joining 4 months late). I know what a healthy account rhythm looks like and how to embed it across a team, not just my own desk.</p>
+        </div>
+      </div>
+
+      <div class="value-row">
+        <div class="value-num">◆</div>
+        <div class="value-content">
+          <p class="value-title">Leading Teams, Not Just Managing Tasks</p>
+          <p class="value-body">I managed a team of Developer Advocates at IBM and now <strong>serve as team leader for the MEA North SDE team at SAP</strong>. I set direction, create accountability, and bring out the best in the people around me.</p>
+        </div>
+      </div>
+
+      <div class="value-row">
+        <div class="value-num">◆</div>
+        <div class="value-content">
+          <p class="value-title">Salesforce &amp; Pipeline Governance</p>
+          <p class="value-body">Currently running pipeline management in Salesforce at SAP. I take data hygiene seriously. A CRM that nobody trusts is just admin overhead. I make it a decision-making tool.</p>
+        </div>
+      </div>
+
+      <div class="value-row">
+        <div class="value-num">◆</div>
+        <div class="value-content">
+          <p class="value-title">Senior Stakeholder Engagement</p>
+          <p class="value-body">From CTOs at IBM to enterprise procurement at SAP. I have built relationships at the executive level across Egypt, South Africa, and Morocco. I communicate with clarity, adapt to the room, and earn trust quickly.</p>
+        </div>
+      </div>
+
+      <div class="value-row">
+        <div class="value-num">◆</div>
+        <div class="value-content">
+          <p class="value-title">AI-Led Selling</p>
+          <p class="value-body">I build AI into the way I work, not as a gimmick but as infrastructure. I use AI tools to identify the right accounts and personas, prioritise outreach, and build applications that sharpen how I prospect and engage. It is how I compete at 140%.</p>
+        </div>
+      </div>
+
+      <div class="value-row">
+        <div class="value-num">◆</div>
+        <div class="value-content">
+          <p class="value-title">Partner Ecosystem</p>
+          <p class="value-body">I have built and maintained partner relationships throughout my career, from 200+ startup partners in IBM's Global Entrepreneur Program to strategic alliances at SAP. I know how to activate a partner network to open doors, extend reach, and co-sell effectively.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SLIDE 5: WHY ═══════════ -->
+<section id="s5">
+  <div class="s5-inner">
+    <div class="s5-quote-wrap">
+      <div class="s5-quote-mark">"</div>
+      <p class="s5-quote">
+        I have spent over a decade building the structures that make client relationships work: the cadence, the data, the trust, the team. Now I want to go <em>deep on a defined portfolio of priority clients</em> and do that at the highest level.
+      </p>
+      <p class="s5-attr">— Myrna Gamal Fahim</p>
+    </div>
+
+    <div class="reasons">
+      <div class="reason-block">
+        <p class="reason-head">This is a deliberate move, not a sideways step.</p>
+        <p class="reason-body">Moving from technical sales and SDE leadership into account management excellence is a deliberate choice. I want to go deeper on the client relationship itself, and this role is the right vehicle for that.</p>
+      </div>
+      <div class="reason-block">
+        <p class="reason-head">The Priority Client Programme model is what I am built for.</p>
+        <p class="reason-body">Individual ownership of a portfolio combined with a community of practice, sharing best practices, raising the whole team's capability. That is the environment where I do my best work and grow the most.</p>
+      </div>
+    </div>
+
+    <div class="commit-strip">
+      <div class="commit-item">
+        <p class="commit-when">Day 1</p>
+        <p class="commit-what"><strong>Listen &amp; map</strong>Understand the client landscape, team dynamics, and existing rhythms before changing anything</p>
+      </div>
+      <div class="commit-item">
+        <p class="commit-when">30 Days</p>
+        <p class="commit-what"><strong>Audit &amp; diagnose</strong>Salesforce data quality, reporting cadence, stakeholder coverage: a clear picture of the starting point</p>
+      </div>
+      <div class="commit-item">
+        <p class="commit-when">90 Days</p>
+        <p class="commit-what"><strong>Embed &amp; deliver</strong>Structured account cadence in place, first client value report delivered, Salesforce governance live</p>
+      </div>
+      <div class="commit-item">
+        <p class="commit-when">6 Months</p>
+        <p class="commit-what"><strong>Measure &amp; grow</strong>Visible uplift in feedback volumes, pipeline accuracy, and on-time reporting across the portfolio</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="scroll-cue"><span>scroll</span><span>↓</span></div>
+
+<script>
+const secs = [...document.querySelectorAll('section')];
+const links = [...document.querySelectorAll('nav a')];
+const dots  = [...document.querySelectorAll('.dots a')];
+
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const id = e.target.id;
+    links.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#'+id));
+    dots.forEach(d  => d.classList.toggle('on', d.getAttribute('href') === '#'+id));
+  });
+}, { threshold: 0.45 });
+
+secs.forEach(s => io.observe(s));
+
+const cue = document.querySelector('.scroll-cue');
+window.addEventListener('scroll', () => cue.style.opacity = '0', { once: true });
+</script>
+</body>
+</html>
