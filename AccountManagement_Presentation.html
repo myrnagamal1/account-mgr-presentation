@@ -104,7 +104,13 @@ section { min-height: 100vh; position: relative; overflow: hidden; display: flex
 
 /* right side stat block */
 .s1-stats { display: flex; flex-direction: column; gap: 2px; }
-.s1-photo { width: 100%; aspect-ratio: 1; border-radius: 50%; object-fit: cover; object-position: top; border: 3px solid var(--teal); margin-bottom: 16px; display: block; }
+.s1-photo {
+  width: 110px; height: 110px;
+  border-radius: 50%; object-fit: cover; object-position: top;
+  border: 3px solid var(--teal);
+  display: block; margin-bottom: 20px;
+  flex-shrink: 0;
+}
 .stat-block {
   background: var(--bg2);
   padding: 22px 24px;
@@ -356,11 +362,22 @@ section { min-height: 100vh; position: relative; overflow: hidden; display: flex
 }
 
 @media (max-width: 900px) {
-  .s1-inner, .s2-inner, .s4-inner { grid-template-columns: 1fr; }
+  section { height: auto; min-height: 100vh; padding: 20px 0; }
+  .s1-inner, .s2-inner, .s4-inner { grid-template-columns: 1fr; padding: 40px 24px; gap: 32px; }
   .s3-top, .s3-actions, .reasons, .commit-strip { grid-template-columns: 1fr; }
   .s2-left { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); padding-right: 0; padding-bottom: 30px; }
   .s2-right { padding-left: 0; padding-top: 30px; }
   .dots { display: none; }
+  .s1-name { font-size: clamp(38px, 10vw, 60px); }
+  .s1-stats { display: none; }
+  .s1-photo { display: block; margin-bottom: 16px; }
+  .s3-inner, .s5-inner { padding: 32px 24px; }
+  .s3-watermark { font-size: 180px; }
+  .s4-inner { padding: 40px 24px; }
+  .value-row { padding: 16px 0; }
+  .s5-reasons { grid-template-columns: 1fr; }
+  nav { padding: 12px 20px; flex-wrap: wrap; gap: 8px; }
+  nav a { font-size: 9px; }
 }
 </style>
 </head>
@@ -396,7 +413,7 @@ section { min-height: 100vh; position: relative; overflow: hidden; display: flex
       <p class="s1-intro">
         I build teams, grow ecosystems, and create the<br>
         <em>structure that makes client relationships thrive.</em><br>
-        Eight years of doing it at IBM and SAP.
+        10+ years of doing it at IBM and SAP.
       </p>
       <div class="s1-tags">
         <span class="tag">Career</span>
@@ -408,7 +425,7 @@ section { min-height: 100vh; position: relative; overflow: hidden; display: flex
     <div class="s1-stats">
       <img src="myrna.png" class="s1-photo" alt="Myrna Gamal Fahim">
       <div class="stat-block">
-        <div class="stat-num">8+</div>
+        <div class="stat-num">10+</div>
         <div class="stat-label">Years leading teams and managing enterprise client relationships</div>
       </div>
       <div class="stat-block">
@@ -548,7 +565,7 @@ section { min-height: 100vh; position: relative; overflow: hidden; display: flex
         <div class="value-num">◆</div>
         <div class="value-content">
           <p class="value-title">Account Cadence &amp; Discipline</p>
-          <p class="value-body">I have designed and run engagement cycles for <strong>40+ client and partner relationships at IBM</strong>. At SAP I hit <strong>140% of target this year</strong> and <strong>100% last year</strong> (joining 4 months late). I know what a healthy account rhythm looks like and how to embed it across a team, not just my own desk.</p>
+          <p class="value-body">I have owned enterprise client relationships end-to-end at both IBM and SAP — from the first outreach call to the executive business review. At SAP I hit <strong>140% of target this year</strong> and <strong>100% last year</strong> (joining 4 months late). I know what a healthy account rhythm looks like and how to embed it across a team, not just my own desk.</p>
         </div>
       </div>
 
