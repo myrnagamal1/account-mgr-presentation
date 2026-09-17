@@ -3,8 +3,8 @@ from pptx.util import Inches, Pt
 from pptx.dml.color import RGBColor
 from pptx.enum.text import PP_ALIGN
 from pptx.util import Emu
-from PIL import Image
-import math, os
+from PIL import Image, ImageDraw
+import math, os, io
 
 CHARCOAL  = RGBColor(0x11, 0x13, 0x18)
 CHARCOAL2 = RGBColor(0x18, 0x1c, 0x24)
@@ -75,6 +75,25 @@ rect(s1, Inches(9.5), 0, W - Inches(9.5), H, fill=CHARCOAL2)
 
 eyebrow(s1, "Account Manager", Inches(0.3), Inches(0.55), Inches(9))
 
+# Photo — crop to square from top, save to buffer at full res
+photo_path = "/Users/i763300/Desktop/ClaudeProjects/account-mgr-presentation/myrna.png"
+if os.path.exists(photo_path):
+    img = Image.open(photo_path).convert("RGB")
+    w, h = img.size
+    side = min(w, h)
+    left = (w - side) // 2
+    top = 0  # crop from top to keep face
+    img_cropped = img.crop((left, top, left + side, top + side))
+    img_cropped = img_cropped.resize((600, 600), Image.LANCZOS)
+    buf = io.BytesIO()
+    img_cropped.save(buf, format="PNG", dpi=(300, 300))
+    buf.seek(0)
+    photo_size = Inches(2.6)
+    photo_left = Inches(10.2)
+    photo_top  = Inches(0.45)
+    s1.shapes.add_picture(buf, photo_left, photo_top,
+                          width=photo_size, height=photo_size)
+
 txb(s1, "Myrna", Inches(0.3), Inches(1.0), Inches(9), Inches(0.75),
     size=60, bold=True, color=WHITE)
 txb(s1, "Gamal Fahim", Inches(0.3), Inches(1.72), Inches(9), Inches(0.75),
@@ -90,12 +109,6 @@ hline(s1, Inches(0.3), Inches(3.32), Inches(3.0))
 txb(s1, "I want to own a client relationship completely.\nTo be the person they call, the person they trust,\nand the person who makes them successful.",
     Inches(0.3), Inches(3.45), Inches(8.8), Inches(0.95),
     size=13, color=WHITE, wrap=True)
-
-# Photo
-photo_path = "/Users/i763300/Desktop/ClaudeProjects/account-mgr-presentation/myrna.png"
-if os.path.exists(photo_path):
-    s1.shapes.add_picture(photo_path, Inches(10.1), Inches(0.5),
-                           width=Inches(2.8), height=Inches(2.8))
 
 # Stats
 stats = [
